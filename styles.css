@@ -39,7 +39,7 @@ body {
 }
 
 .custom-container {    
-    color: #395784;
+    color: black;
     height: 100vh; 
     display: flex;
     justify-content: center;
