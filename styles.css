@@ -1,11 +1,12 @@
 body {
-    font-family: sans-serif, sans-serif;  /* previous: Alef, Assistant, Suez One */
-    direction: rtl; 
+    font-family: sans-serif, sans-serif; /* previous: Alef, Assistant, Suez One */
+    direction: rtl;
     text-align: right;
+    vertical-align: middle;
     /*font-weight: bold;*/
     line-height: 1;
     height: 100vh;
-    font-size: 24px; 
+    font-size: 24px;
     color: black;
     cursor: none;
     /*padding: 10px;
