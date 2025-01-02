@@ -279,6 +279,23 @@ function displayLeibovitzZmanimWithChagim() {
  
 }
 
+function isDateInCurrentWeek(dateToCheck = new Date()) {
+    const today = new Date();
+
+    // Get the day of the week (0 = Sunday, 6 = Saturday)
+    const dayOfWeek = today.getDay();
+
+    // Calculate the start of the week (Sunday)
+    const startOfWeek = new Date(today);
+    startOfWeek.setDate(today.getDate() - dayOfWeek);
+
+    // Calculate the end of the week (Saturday)
+    const endOfWeek = new Date(startOfWeek);
+    endOfWeek.setDate(startOfWeek.getDate() + 6);
+
+    // Check if the dateToCheck falls between startOfWeek and endOfWeek
+    return dateToCheck >= startOfWeek && dateToCheck <= endOfWeek;
+}
 
 function displayConfig() {
   
@@ -311,8 +328,14 @@ function displayConfig() {
         document.getElementById('shiur_tfila').textContent = `${data["shiurAfterTfila"]}`;
         document.getElementById('shiur_shabat_time').textContent = `${data["shiurShabatTime"]}`;
 
-        const currentDay = getCurrentDay();
-        if (currentDay === "Friday" || currentDay === "Saturday") {
+        // Update config only on Friday and Saturday
+        // const currentDay = getCurrentDay();
+        // if (currentDay === "Friday" || currentDay === "Saturday" )
+
+        // Update config from current week
+        const configDate = new Date(`${data["configDate"]}`);
+
+        if (isDateInCurrentWeek(configDate)) {
 
             // Read config json data            
             document.getElementById('dvar_tora').textContent = `${data["dvarTora"]}`;
@@ -321,8 +344,8 @@ function displayConfig() {
         }
         else {
             // Clear config data in the begining of the week
-            document.getElementById('dvar_tora').textContent = "";
-            document.getElementById('shiur_shabat_name').textContent = "שיעור";
+            document.getElementById('dvar_tora').textContent = "יעודכן";
+            document.getElementById('shiur_shabat_name').textContent = "שיעור שבת";
         }
                  
     })
