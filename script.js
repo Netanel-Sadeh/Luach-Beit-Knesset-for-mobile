@@ -317,15 +317,7 @@ function displayConfig() {
         document.getElementById('mincha_gdola_chol').textContent = `${data["mincha_gdola_chol"]}`;   
     
         // Read config json data            
-        document.getElementById('dvar_tora').textContent = `${data["dvarTora"]}`;
         document.getElementById('shiur_tfila_time').textContent = `${data["shiurAfterTfilaTime"]}`;
-        document.getElementById('shiur_tfila').textContent = `${data["shiurAfterTfila"]}`;
-        document.getElementById('shiur_shabat_time').textContent = `${data["shiurShabatTime"]}`;
-        document.getElementById('shiur_shabat_name').textContent = `${data["shiurShabatName"]}`;
-        //document.getElementById('shiur_shabat').textContent = `${data["shiurShabatTitle"]}`;    
-
-        document.getElementById('shiur_tfila_time').textContent = `${data["shiurAfterTfilaTime"]}`;
-        document.getElementById('shiur_tfila').textContent = `${data["shiurAfterTfila"]}`;
         document.getElementById('shiur_shabat_time').textContent = `${data["shiurShabatTime"]}`;
 
         // Update config only on Friday and Saturday
@@ -339,12 +331,14 @@ function displayConfig() {
 
             // Read config json data            
             document.getElementById('dvar_tora').textContent = `${data["dvarTora"]}`;
+            document.getElementById('shiur_tfila').textContent = `${data["shiurAfterTfila"]}`;        
             document.getElementById('shiur_shabat_name').textContent = `${data["shiurShabatName"]}`;
 
         }
         else {
             // Clear config data in the begining of the week
             document.getElementById('dvar_tora').textContent = "יעודכן";
+            document.getElementById('shiur_tfila').textContent = "יעודכן";        
             document.getElementById('shiur_shabat_name').textContent = "יעודכן";
         }
                  
