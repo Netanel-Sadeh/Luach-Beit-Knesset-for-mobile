@@ -87,8 +87,7 @@ function getNextSaturday() {
 function displayOmer() {
 
     document.getElementById('odaha_2').textContent = "test";
-    document.getElementById('odaha_3').textContent = "test2";
-    //document.getElementById('tzeit').textContent;
+    document.getElementById('odaha_3').textContent = document.getElementById('tzeit').textContent;
     return;
     const today = new Date();
     const recordDate = formatDateToYYYYMMDD(today);
