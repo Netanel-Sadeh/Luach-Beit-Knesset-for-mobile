@@ -94,7 +94,8 @@ function formatDateToYYYYMMDD(date) {
 function displayOmer() {
 
     document.addEventListener("DOMContentLoaded", function () {
-        document.getElementById('odaha_3').textContent = document.getElementById('tzeit').textContent;
+        document.getElementById('odaha_3').textContent = "test";
+            //document.getElementById('tzeit').textContent;
     });
 
     const today = new Date();
