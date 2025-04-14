@@ -91,7 +91,7 @@ function formatDateToYYYYMMDD(date) {
     return `${year}-${month}-${day}`; // Format as yyyy-mm-dd
 }
 
-function displayOmer() {
+function displayOmer(tzeet) {
 
     //document.addEventListener("DOMContentLoaded", function () {
     //    document.getElementById('odaha_3').textContent = "test";
@@ -291,8 +291,9 @@ function displayLeibovitzZmanimWithChagim() {
         document.getElementById('mincha_ktana_shabat').textContent = `${item["minchashabat"].substr(0, 5)}`;        
         document.getElementById('motzash').textContent = `${item["motzash"].substr(0, 5)}`;    
 
-
-        document.getElementById('tzeit').textContent = `${item["tzeet"].substr(0, 5)}`;
+        const tzeet = `${item["tzeet"].substr(0, 5)}`;
+        document.getElementById('tzeit').textContent = tzeet;
+        displayOmer(tzeet);
             
         // Tfila Hol
         // Change to next week on Fridays.
@@ -473,7 +474,7 @@ function displayAll () {
     displayZmanim();
     displayConfig();
     displayChol();
-    displayOmer();
+    // displayOmer();
     // displayChagim();
     checkInternetConnection();  
 }
