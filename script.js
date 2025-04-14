@@ -93,10 +93,10 @@ function formatDateToYYYYMMDD(date) {
 
 function displayOmer() {
 
-    document.addEventListener("DOMContentLoaded", function () {
-        document.getElementById('odaha_3').textContent = "test";
+    //document.addEventListener("DOMContentLoaded", function () {
+    //    document.getElementById('odaha_3').textContent = "test";
             //document.getElementById('tzeit').textContent;
-    });
+    //});
 
     const today = new Date();
     const recordDate = formatDateToYYYYMMDD(today);
@@ -290,6 +290,8 @@ function displayLeibovitzZmanimWithChagim() {
         document.getElementById('mincha_erev').textContent = addMinutesToTime(`${item["adlaka"].substr(0, 5)}`, 13);
         document.getElementById('mincha_ktana_shabat').textContent = `${item["minchashabat"].substr(0, 5)}`;        
         document.getElementById('motzash').textContent = `${item["motzash"].substr(0, 5)}`;    
+
+
         document.getElementById('tzeit').textContent = `${item["tzeet"].substr(0, 5)}`;
             
         // Tfila Hol
