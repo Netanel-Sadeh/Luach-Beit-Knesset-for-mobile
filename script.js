@@ -99,7 +99,7 @@ function displayOmer() {
             const omerItem = data.items.find(item => item.category === "omer");
 
             document.getElementById('odaha_2').textContent = `${omerItem.omer.count.he}`;
-
+            document.getElementById('odaha_3').textContent = document.getElementById('tzeit').textContent;
             console.log('data = ' + JSON.stringify(data));
             console.log('today omer = ' + omerItem.omer.count.he);
         })
@@ -336,7 +336,7 @@ function displayConfig() {
         document.getElementById('shiur_daf_yomi').textContent = `${data["shiurDafYomiTime"]}`;
         document.getElementById('odaha_1').textContent = `${data["odaha1"]}`;
         //document.getElementById('odaha_2').textContent = `${data["odaha2"]}`;
-        document.getElementById('odaha_3').textContent = `${data["odaha3"]}`;   
+        //document.getElementById('odaha_3').textContent = `${data["odaha3"]}`;   
         document.getElementById('chagim_1').textContent = `${data["chagim1"]}`;
         document.getElementById('chagim_2').textContent = `${data["chagim2"]}`;
         document.getElementById('shacharit_shabat_1').textContent = `${data["shacharit_shabat_1"]}`;
@@ -463,7 +463,7 @@ function displayAll () {
     displayZmanim();
     displayConfig();
     displayChol();
-    displayOmer();
+    //displayOmer();
     // displayChagim();
     checkInternetConnection();  
 }
