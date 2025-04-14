@@ -83,6 +83,13 @@ function getNextSaturday() {
 }
 
 
+function formatDateToYYYYMMDD(date) {
+    const day = String(date.getDate()).padStart(2, '0'); // Get day and pad with leading zero if needed
+    const month = String(date.getMonth() + 1).padStart(2, '0'); // Get month (0-indexed) and pad with leading zero
+    const year = date.getFullYear(); // Get year
+
+    return `${year}-${month}-${day}`; // Format as yyyy-mm-dd
+}
 
 function displayOmer() {
 
