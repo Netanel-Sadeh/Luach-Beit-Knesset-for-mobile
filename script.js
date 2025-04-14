@@ -87,13 +87,11 @@ function getNextSaturday() {
 function displayOmer() {
 
     document.getElementById('odaha_2').textContent = "test";
-    document.getElementById('odaha_3').textContent = document.getElementById('tzeit').textContent;
+    document.getElementById('odaha_3').textContent = "test"; //document.getElementById('tzeit').textContent;
     return;
     const today = new Date();
     const recordDate = formatDateToYYYYMMDD(today);
     const url = 'https://www.hebcal.com/hebcal?cfg=json&o=on&start=' + `${recordDate}` + '&end=' + `${recordDate}` + '&geonameid=293590';
-
-    console.log('display omer url: ' + url);
 
     fetch(url)
         .then(response => response.json())
@@ -102,14 +100,13 @@ function displayOmer() {
             const omerItem = data.items.find(item => item.category === "omer");
 
             //document.getElementById('odaha_2').textContent = "test"; //`${omerItem.omer.count.he}`;
-            console.log('data = ' + JSON.stringify(data));
-            console.log('today omer = ' + omerItem.omer.count.he);
+
+            //console.log('data = ' + JSON.stringify(data));
+            //console.log('today omer = ' + omerItem.omer.count.he);
         })
         .catch(error => {
-            console.error('Error fetching the Omer:', error);
+            //console.error('Error fetching the Omer:', error);
         });
-
-    console.log('displayOmer() ends');
 } 
 
 
