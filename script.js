@@ -82,6 +82,35 @@ function getNextSaturday() {
     return nextSaturday;
 }
 
+
+
+function displayOmer() {
+
+    const today = new Date();
+    const recordDate = formatDateToYYYYMMDD(today);
+    const url = 'https://www.hebcal.com/hebcal?cfg=json&o=on&start=' + `${recordDate}` + '&end=' + `${recordDate}` + '&geonameid=293590';
+
+    console.log('display omer url: ' + url);
+
+    fetch(url)
+        .then(response => response.json())
+        .then(data => {
+
+            const omerItem = data.items.find(item => item.category === "omer");
+
+            document.getElementById('odaha_2').textContent = `${omerItem.omer.count.he}`;
+
+            console.log('data = ' + JSON.stringify(data));
+            console.log('today omer = ' + omerItem.omer.count.he);
+        })
+        .catch(error => {
+            console.error('Error fetching the Omer:', error);
+        });
+
+    console.log('displayOmer() ends');
+} 
+
+
 /* 
  * Daily Zmanim
  * Shaalabim geonameid=293590
@@ -308,6 +337,8 @@ function displayConfig() {
         document.getElementById('odaha_1').textContent = `${data["odaha1"]}`;
         document.getElementById('odaha_2').textContent = `${data["odaha2"]}`;
         document.getElementById('odaha_3').textContent = `${data["odaha3"]}`;   
+        document.getElementById('chagim_1').textContent = `${data["chagim1"]}`;
+        document.getElementById('chagim_2').textContent = `${data["chagim2"]}`;
         document.getElementById('shacharit_shabat_1').textContent = `${data["shacharit_shabat_1"]}`;
         document.getElementById('shacharit_shabat').textContent = `${data["shacharit_shabat"]}`;
         document.getElementById('mincha_gdola_shabat').textContent = `${data["mincha_gdola_shabat"]}`;
@@ -432,6 +463,7 @@ function displayAll () {
     displayZmanim();
     displayConfig();
     displayChol();
+    displayOmer();
     // displayChagim();
     checkInternetConnection();  
 }
