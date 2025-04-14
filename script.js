@@ -463,7 +463,7 @@ function displayAll () {
     displayZmanim();
     displayConfig();
     displayChol();
-    //displayOmer();
+    displayOmer();
     // displayChagim();
     checkInternetConnection();  
 }
