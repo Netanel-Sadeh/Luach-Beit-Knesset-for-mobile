@@ -93,13 +93,18 @@ function formatDateToYYYYMMDD(date) {
 
 function displayOmer(tzeet) {
 
-    //document.addEventListener("DOMContentLoaded", function () {
-    //    document.getElementById('odaha_3').textContent = "test";
-            //document.getElementById('tzeit').textContent;
-    //});
+    // Create a Date object for tzeet
+    const [hours, minutes] = tzeet.split(":").map(Number);
+    const tzeetInDate = new Date();
+    tzeetInDate.setHours(hours, minutes, 0, 0); // hour, min, sec, ms
 
     const today = new Date();
-    const recordDate = formatDateToYYYYMMDD(today);
+    const tomorrow = new Date(today);
+    tomorrow.setDate(today.getDate() + 1);
+
+    const dateToFetch = (today < tzeetInDate) ? today : tomorrow;
+
+    const recordDate = formatDateToYYYYMMDD(dateToFetch);
     const url = 'https://www.hebcal.com/hebcal?cfg=json&o=on&start=' + `${recordDate}` + '&end=' + `${recordDate}` + '&geonameid=293590';
 
     fetch(url)
