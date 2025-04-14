@@ -86,12 +86,15 @@ function getNextSaturday() {
 
 function displayOmer() {
 
+    document.getElementById('odaha_2').textContent = "test";
+    return;
+
     const today = new Date();
     const recordDate = formatDateToYYYYMMDD(today);
     const url = 'https://www.hebcal.com/hebcal?cfg=json&o=on&start=' + `${recordDate}` + '&end=' + `${recordDate}` + '&geonameid=293590';
 
     console.log('display omer url: ' + url);
-    document.getElementById('odaha_2').textContent = "test";
+
     fetch(url)
         .then(response => response.json())
         .then(data => {
