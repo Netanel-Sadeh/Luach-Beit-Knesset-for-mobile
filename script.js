@@ -93,9 +93,10 @@ function formatDateToYYYYMMDD(date) {
 
 function displayOmer() {
 
-    //document.getElementById('odaha_2').textContent = "test";
-    //document.getElementById('odaha_3').textContent = document.getElementById('tzeit').textContent;
-    //return;
+    document.addEventListener("DOMContentLoaded", function () {
+        document.getElementById('odaha_3').textContent = document.getElementById('tzeit').textContent;
+    });
+
     const today = new Date();
     const recordDate = formatDateToYYYYMMDD(today);
     const url = 'https://www.hebcal.com/hebcal?cfg=json&o=on&start=' + `${recordDate}` + '&end=' + `${recordDate}` + '&geonameid=293590';
