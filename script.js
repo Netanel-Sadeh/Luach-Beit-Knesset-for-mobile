@@ -99,7 +99,7 @@ function displayOmer() {
             const omerItem = data.items.find(item => item.category === "omer");
 
             document.getElementById('odaha_2').textContent = `${omerItem.omer.count.he}`;
-            document.getElementById('odaha_3').textContent = document.getElementById('tzeit').textContent;
+            //document.getElementById('odaha_3').textContent = document.getElementById('tzeit').textContent;
             console.log('data = ' + JSON.stringify(data));
             console.log('today omer = ' + omerItem.omer.count.he);
         })
