@@ -382,9 +382,9 @@ function displayConfig() {
         }
         else {
             // Clear config data in the begining of the week
-            document.getElementById('dvar_tora').textContent = "יעודכן";
-            document.getElementById('shiur_tfila').textContent = "יעודכן";        
-            document.getElementById('shiur_shabat_name').textContent = "יעודכן";
+            document.getElementById('dvar_tora').textContent = "";
+            document.getElementById('shiur_tfila').textContent = "";        
+            document.getElementById('shiur_shabat_name').textContent = "";
 
             document.getElementById('shiur_tfila_time').textContent = "";
             document.getElementById('shiur_shabat_time').textContent = "";
